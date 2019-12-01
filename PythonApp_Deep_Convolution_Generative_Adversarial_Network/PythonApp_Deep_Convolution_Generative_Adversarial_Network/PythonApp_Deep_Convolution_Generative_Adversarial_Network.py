@@ -208,6 +208,7 @@ anim_file = 'dcgan.gif'
 with imageio.get_writer(anim_file, mode='I') as writer:
     filenames = glob.glob('image*.png')
     filenames = sorted(filenames)
+    filenames.sort(key=lambda x: int(x[5:-4]))  # 文件名按数字排序
     # last = -1
     for i, filename in enumerate(filenames):
         '''
